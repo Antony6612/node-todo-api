@@ -90,10 +90,6 @@ app.patch('/todos/:id', (req, res) => {
 app.post('/users', (req, res) => {
   var body = _.pick(req.body, ['email', 'password']);
   var user = new User(body);
-
-  // User.findByToken
-  // user.generateAuthToken
-
   user.save().then((doc) => {
     return user.generateAuthToken();
   }).then((token) => {
