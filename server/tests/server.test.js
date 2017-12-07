@@ -172,7 +172,7 @@ describe('PATCH /todos/:id', () => {
         done();
       }).catch((e) => done(e));
   });
-  it('should not update a todo created by another user', (done) => {
+  it('should not update the todo created by another user', (done) => {
     var id = todos[0]._id.toHexString();
     var update = {
       text: `Updated at ${new Date().toString()} by test`,
